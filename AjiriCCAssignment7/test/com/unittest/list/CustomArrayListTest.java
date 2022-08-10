@@ -285,17 +285,15 @@ class CustomArrayListTest
 		list.add("Denora");
 		list.add("King");
 		
-
-		assertEquals("King", list.get(9));
-
 		list.remove(9);
-		IndexOutOfBoundsException exception = Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
-			list.get(9);
-		});
-		
-		assertEquals("Denora", list.get(8));
-		assertEquals(list.getSize(), 9);
-		assertEquals("Index out of bounds.", exception.getMessage());
+		list.add("Calypso");
+		list.add(7, "10000");
+		list.add(3, "10000");
+
+		assertEquals("10000", list.get(3));
+		assertEquals("10000", list.get(8));
+		assertEquals("Calypso", list.get(11));
+		assertEquals(list.getSize(), 12);
 	}
 
 }
