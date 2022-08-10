@@ -2,11 +2,14 @@ package com.unittest.list;
 
 import java.util.Arrays;
 
-public class CustomArrayList<T> implements CustomList<T> {
+public class CustomArrayList<T> implements CustomList<T> 
+
+{
 	private Object[] items;
 	private int size;
 	
 	public CustomArrayList()
+	
 	{
 		this.items = new Object[10];
 		Arrays.fill(this.items, null);

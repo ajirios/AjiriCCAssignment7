@@ -267,5 +267,35 @@ class CustomArrayListTest
 		assertEquals("Index out of bounds.", exception1.getMessage());
 		assertEquals("Index out of bounds.", exception2.getMessage());
 	}
+	
+	@Test
+	void should_remove_item_9_from_list_size_10()
+	
+	{
+		CustomArrayList<String> list = new CustomArrayList<String>();
+		
+		list.add("Verdant");
+		list.add("Salvatore");
+		list.add("Gemini");
+		list.add("Watchman");
+		list.add("Gaara");
+		list.add("Venturi");
+		list.add("Passo");
+		list.add("Bikini");
+		list.add("Denora");
+		list.add("King");
+		
+
+		assertEquals("King", list.get(9));
+
+		list.remove(9);
+		IndexOutOfBoundsException exception = Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
+			list.get(9);
+		});
+		
+		assertEquals("Denora", list.get(8));
+		assertEquals(list.getSize(), 9);
+		assertEquals("Index out of bounds.", exception.getMessage());
+	}
 
 }
